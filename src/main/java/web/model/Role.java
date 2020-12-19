@@ -45,7 +45,6 @@ public class Role implements GrantedAuthority {
     }
 
 
-    // todo check it in google
     @Override
     public String getAuthority() {
         return name;

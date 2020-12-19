@@ -47,7 +47,6 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    // todo check it in google why we need this methods
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles;
