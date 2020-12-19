@@ -5,11 +5,12 @@
     <title>Index</title>
 </head>
 <body>
+<div th:text="${auth}" ></div>
 
 <div th:each="user : ${users}">
     User Data
     <div> <div th:text="${user.getEmail()}"> </div> </div>
-    <div>     <a th:href="@{/user/{id}(id=${user.getId()})}" th:text="${user.getName()}"> Name </a>
+    <div>     <a th:href="@{admin/user/{id}(id=${user.getId()})}" th:text="${user.getName()}"> Name </a>
      </div>
     <br>
 
@@ -19,7 +20,9 @@
 <br/>
 <hr/>
 
-<a href="/new">Create new person</a>
-
+<a href="admin/new">Create new person</a>
+<form th:action="@{/logout}" method="post">
+    <button type="submit">logout</button>
+</form>
 </body>
 </html>

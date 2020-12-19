@@ -1,18 +1,18 @@
 package web.services;
 
 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Repository;
 import web.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Query;
-
-import java.util.Arrays;
 import java.util.List;
 
 @Repository
-public class UserServImp {
+public class UserServImp implements UserServ, UserDetailsService {
 
     private final EntityManager em;
 
@@ -50,4 +50,8 @@ public class UserServImp {
         em.getTransaction().commit();
     }
 
+    @Override
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+        return em.createQuery("select us from User us where us.name=:name", User.class).setParameter("name", s).getSingleResult();
+    }
 }

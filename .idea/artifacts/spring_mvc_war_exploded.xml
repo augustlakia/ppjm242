@@ -46,6 +46,10 @@
           <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy:1.10.17" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.22" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.4.2" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.4.2" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.4.2" />
+          <element id="library" level="project" name="Maven: org.thymeleaf.extras:thymeleaf-extras-springsecurity5:3.0.4.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">

@@ -9,9 +9,6 @@
         <webroots>
           <root url="file://$MODULE_DIR$/src/webapp" relative="/" />
         </webroots>
-        <sourceRoots>
-          <root url="file://$MODULE_DIR$/src/main/java" />
-        </sourceRoots>
       </configuration>
     </facet>
     <facet type="jpa" name="JPA">
@@ -75,7 +72,9 @@
     <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy:1.10.17" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.22" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.11.4" level="project" />
-    <orderEntry type="library" name="Maven: org.thymeleaf:thymeleaf:Release" level="project" />
-    <orderEntry type="library" name="Maven: org.hibernate:hibernate-core:5.2.9.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:5.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:5.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:5.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.thymeleaf.extras:thymeleaf-extras-springsecurity5:3.0.4.RELEASE" level="project" />
   </component>
 </module>

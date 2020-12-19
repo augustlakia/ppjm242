@@ -5,15 +5,22 @@
     <title>Show</title>
 </head>
 <body>
-USER DATA
+<div>
+    <h3> about you </h3>
+
+</div>
+USER
 <p th:text="${user.getName()}">VALUE</p>
 <p th:text="${user.getId()}">VALUE</p>
 <p th:text="${user.getEmail()}"></p>
 
-<a th:href="@{/{id}/edit(id=${user.getId()})}">Edit</a>
+<a th:href="@{http://localhost:8080/admin/{id}/edit(id=${user.getId()})}">Edit</a>
 
-<form th:method="DELETE" th:action="@{/user/{id}(id=${user.getId()})}">
+<form th:method="DELETE" th:action="@{http://localhost:8080/admin/user/{id}(id=${user.getId()})}">
     <input type="submit" value="Delete"/>
+</form>
+<form th:action="@{/logout}" method="post">
+    <button type="submit">logout</button>
 </form>
 </body>
 </html>

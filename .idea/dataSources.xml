@@ -7,5 +7,14 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/spring_hiber?verifyServerCertificate=false&amp;useSSL=false&amp;requireSSL=false&amp;useLegacyDatetimeCode=false&amp;amp&amp;serverTimezone=Europe/Moscow</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="spring_hiber@localhost" uuid="a6c3019a-5182-42c3-b2dc-79a09584f73e">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/spring_hiber</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="Europe/Moscow" />
+      </driver-properties>
+    </data-source>
   </component>
 </project>
