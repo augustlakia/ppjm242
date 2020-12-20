@@ -21,16 +21,16 @@ public class FinishedUserController {
     @Autowired
     private UserServImp userService;
 
-    @GetMapping(value = "/first")
-    public String bd() {
-        List<Role> rols = new ArrayList<>();
-        rols.add(new Role("ROLE_ADMIN"));
-        userService.add(new User("ADMIN", "admin@admin.com", "ADMIN", rols));
-        List<Role> rols2 = new ArrayList<>();
-        rols2.add(new Role("ROLE_USER"));
-        userService.add(new User("USER", "user@user.com", "USER", rols2));
-        return "first";
-    }
+//    @GetMapping(value = "/first")
+//    public String bd() {
+//        List<Role> rols = new ArrayList<>();
+//        rols.add(new Role("ROLE_ADMIN"));
+//        userService.add(new User("ADMIN", "admin@admin.com", "ADMIN", rols));
+//        List<Role> rols2 = new ArrayList<>();
+//        rols2.add(new Role("ROLE_USER"));
+//        userService.add(new User("USER", "user@user.com", "USER", rols2));
+//        return "first";
+//    }
 
 @GetMapping(value = "/user")
 public String aboutUser(Model model, Authentication auth) {

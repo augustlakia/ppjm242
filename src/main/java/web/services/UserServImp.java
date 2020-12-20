@@ -5,53 +5,51 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import web.DAO.UserDAO;
 import web.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import java.util.List;
 
-@Repository
+@Service
 public class UserServImp implements UserServ, UserDetailsService {
 
-    private final EntityManager em;
+    private final UserDAO userDAO;
 
-    public UserServImp(EntityManagerFactory em) {
-        this.em = em.createEntityManager();
+    public UserServImp(EntityManagerFactory em, UserDAO userDAO) {
+        this.userDAO = userDAO;
     }
 
 
     public void add(User user) {
-        em.getTransaction().begin();
-        em.persist(user);
-        em.getTransaction().commit();
+        userDAO.add(user);
     }
 
     @SuppressWarnings("unchecked")
     public List<User> getUsersList() {
-        return em.createQuery("select us from User us").getResultList();
+        return userDAO.getUsersList();
     }
 
     public User findById(int id) {
-        return (User) em.createQuery("select u from User u where u.id =:id")
-                .setParameter("id", Long.parseLong(String.valueOf(id)))
-                .getSingleResult();
+        return userDAO.findById(id);
     }
 
     public void Update(User user) {
-        em.getTransaction().begin();
-        em.merge(user);
-        em.getTransaction().commit();
+        userDAO.Update(user);
     }
 
     public void Delete(int id ) {
-        em.getTransaction().begin();
-        em.createQuery("DELETE User us where us.id =:id").setParameter("id", Long.parseLong(String.valueOf(id))).executeUpdate();
-        em.getTransaction().commit();
+        userDAO.Delete(id);
     }
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        return em.createQuery("select us from User us where us.name=:name", User.class).setParameter("name", s).getSingleResult();
+        return userDAO.loadUserByUsername(s);
+    }
+
+    public boolean isCreated() {
+        return userDAO.isCreated();
     }
 }
